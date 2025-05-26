@@ -13,7 +13,7 @@ export const handleLogUpload: RequestHandler = async (req, res, next) => {
       // Create prepared statement
       const stmt = db.prepare(`
         insert into server_log (id, serverId, commandLabel, command, response, dateCreated)
-        values (?, ?, ?, ?, ?)
+        values (?, ?, ?, ?, ?, ?)
       `);
 
       let hasError = false;

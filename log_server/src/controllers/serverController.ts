@@ -12,7 +12,7 @@ export const handleServerRegistration: RequestHandler = async (
   try {
     const { ipAddress, name } = req.body as RegisterServerModel;
     db.get(
-      `select * from server where ipAddress = ?`,
+      `select id from server where ipAddress = ?`,
       [ipAddress],
       (err, row) => {
         if (err) {
@@ -21,7 +21,9 @@ export const handleServerRegistration: RequestHandler = async (
           return;
         }
         if (row) {
-          res.status(400).json({ message: "Server already exists" });
+          res
+            .status(200)
+            .json({ message: "Server already exists", serverId: row });
           return;
         }
         const serverId = uuid();
