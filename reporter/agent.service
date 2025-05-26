@@ -1,0 +1,12 @@
+[Unit]
+Description=Server Agent
+After=network.target
+
+[Service]
+User=node
+WorkingDirectory=/opt/reporter
+ExecStart=/usr/bin/node index.ts
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
