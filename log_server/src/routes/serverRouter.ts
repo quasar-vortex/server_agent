@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { apiBaseUrl } from "..";
+
 import controllers from "../controllers";
 import valMiddleware from "../middleware/valMiddleware";
 import { registerServerModel } from "../models";
