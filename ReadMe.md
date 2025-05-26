@@ -105,7 +105,7 @@ After=network.target
 
 [Service]
 User=ubuntu
-WorkingDirectory=/opt/reporter
+WorkingDirectory=/opt/reporter #set the correct folder for wherever the reporter is deployed
 ExecStart=/usr/bin/node dist/index.js
 Restart=on-failure
 
