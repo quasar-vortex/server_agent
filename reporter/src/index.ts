@@ -99,7 +99,7 @@ const main = async () => {
     } catch (error) {
       console.error("Unable to send logs: ", error);
     }
-  }, 1000 * 1);
+  }, 1000 * 60 * 15);
 };
 
 main();
